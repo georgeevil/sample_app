@@ -2,15 +2,20 @@
 <html>
 <head>
   <title><%= title %></title>
-  <%= stylesheet_link_tag 'blueprint/screen', :media => 'screen' %>
-  <%= stylesheet_link_tag 'blueprint/print',  :media => 'print' %>
-  <%= stylesheet_link_tag    "application" %>
+  <%= csrf_meta_tag %>
+	<%= render 'layouts/stylesheets' %>
   <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+      	<%= render 'layouts/header' %>
+        </nav>
+      </header>
+      <section class="round">
+        <%= yield %>
+      </section>
+      <%= render 'layouts/footer'%>
+    </div>
+  </body>
 </html>
