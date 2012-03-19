@@ -1,6 +1,6 @@
 SampleApp::Application.routes.draw do
   resources :users
-
+  match '/send_sms/:number_to_send_to',:to => 'text_sender#send_text_message'
   match '/signup',  :to => 'users#new'
 
   match '/contact', :to => 'pages#contact'
