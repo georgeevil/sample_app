@@ -1,0 +1,12 @@
+<h1>Sample App</h1>
+<p>
+  Text message has been sent.
+  <table>
+  <% params.each do |param| %>
+  <tr>
+  	<td><%= param %></td>
+  </tr>
+  <% end %>
+  </table>s
+</p>
+<%= link_to "Sign up now!", signup_path , :class => "signup_button round" %>

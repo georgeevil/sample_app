@@ -2,12 +2,12 @@ SampleApp::Application.routes.draw do
   resources :users
   match '/send_sms/:number_to_send_to',:to => 'text_sender#send_text_message'
   match '/signup',  :to => 'users#new'
-
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
   match '/help',    :to => 'pages#help'
 
   root :to => 'pages#home'
+  match ':controller(/:action(/:id(.:format)))'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
